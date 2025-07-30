@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:personal_history/const.dart';
-import 'package:personal_history/resetPasswordScreens/otp_email.dart';
+import 'package:personal_history/screens/resetPasswordScreens/otp_email.dart';
 import 'package:personal_history/widgets/CustomButton.dart';
+import 'package:personal_history/widgets/customTextField.dart';
 
 class EmailVerify extends StatefulWidget {
   const EmailVerify({super.key});
@@ -52,37 +53,20 @@ class _EmailVerifyState extends State<EmailVerify> {
                 ),
                 const SizedBox(height: 13),
                 const Text(
-                  "أدخل بريدك الإلكتروني، سنرسل لك رمز التحقق عبر البريد الإلكتروني",
-                  style: TextStyle(fontSize: 20, color: Colors.grey),
+                  "أدخل بريدك الإلكتروني، سنرسل لك رمز التحقق عبر\nالبريد الإلكتروني",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
                 ),
                 const SizedBox(height: 20),
-                TextFormField(
+                CustomTextField(
                   controller: emailController,
                   focusNode: emailFocusNode,
-                  decoration: InputDecoration(
-                    focusedBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(color: kPrimaryColor),
-                    ),
-                    floatingLabelStyle: const TextStyle(
-                      color: kPrimaryColor,
-                    ),
-                    labelText: "البريد الإلكتروني",
-                    labelStyle: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    prefixIcon: Icon(
-                      Icons.email_rounded,
-                      color: emailFocusNode.hasFocus
-                          ? kPrimaryColor
-                          : Colors.black,
-                    ),
-                  ),
+                  label: "البريد الإلكتروني",
+                  icon: Icons.email_rounded,
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
-                    if (value == null || value.isEmpty) {
+                    if (value == null || value.isEmpty)
                       return "البريد الإلكتروني لا يمكن أن يكون فارغًا";
-                    }
                     if (!RegExp(
                             r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
                         .hasMatch(value)) {
@@ -90,10 +74,10 @@ class _EmailVerifyState extends State<EmailVerify> {
                     }
                     return null;
                   },
-                  onTap: () => setState(() {}),
                 ),
                 const SizedBox(height: 50),
                 CustomButton(
+                   width: double.infinity,
                   text: "ارسال",
                   ontap: () {
                     if (formKey.currentState!.validate()) {

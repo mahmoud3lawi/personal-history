@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // لاستيراد input formatters
 import 'package:personal_history/const.dart';
-import 'package:personal_history/resetPasswordScreens/reset.dart';
+import 'package:personal_history/screens/resetPasswordScreens/reset.dart';
 import 'package:personal_history/widgets/CustomButton.dart';
 
-class OtpEmail extends StatefulWidget {
+class OtpPhone extends StatefulWidget {
   @override
-  _OtpEmailState createState() => _OtpEmailState();
+  _OtpPhoneState createState() => _OtpPhoneState();
 }
 
-class _OtpEmailState extends State<OtpEmail> {
+class _OtpPhoneState extends State<OtpPhone> {
   final List<TextEditingController> textControllers =
       List.generate(4, (index) => TextEditingController());
   late List<FocusNode> focusNodes;
@@ -124,7 +124,7 @@ class _OtpEmailState extends State<OtpEmail> {
               ),
               SizedBox(height: 8),
               Text(
-                'يرجى إدخال الرمز الذي أرسلناه للتو إلى example@gmail.com',
+                'يرجى إدخال الرمز الذي أرسلناه للتو إلى رقم الهاتف +20-010-678-75828',
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
@@ -133,16 +133,32 @@ class _OtpEmailState extends State<OtpEmail> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(4, (index) => _buildOTPBox(index)),
               ),
-              SizedBox(height: 16),
-              TextButton(
-                onPressed: _resendOTP,
-                child: Text(
-                  "لم تستلم رمز التحقق؟",
-                  style: TextStyle(color: Colors.blue, fontSize: 16),
-                ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "لم تستلم رمز التحقق؟",
+                    style: TextStyle(color: Colors.grey, fontSize: 16),
+                  ),
+                  SizedBox(width: 5),
+                  InkWell(
+                    onTap: _resendOTP,
+                    child: const Text(
+                      "إعادة إرسال الرمز",
+                      style: TextStyle(
+                        color: kPrimaryColor,
+                        fontSize: 18,
+                        decorationColor: kPrimaryColor,
+                        decorationThickness: 2,
+                      ),
+                    ),
+                  )
+                ],
               ),
               SizedBox(height: 32),
               CustomButton(
+                 width: double.infinity,
                 text: "تأكيد",
                 ontap: _verifyOTP,
               )

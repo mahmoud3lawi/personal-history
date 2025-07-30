@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_history/screens/adwity/addAdwity.dart';
 import 'package:personal_history/const.dart';
 
 class HomePatient extends StatefulWidget {
@@ -24,7 +25,7 @@ class _HomePatientState extends State<HomePatient> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start  ,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               height: 20,
@@ -69,7 +70,14 @@ class _HomePatientState extends State<HomePatient> {
                     Icons.notifications,
                     color: Colors.grey,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Addadwity(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
@@ -123,7 +131,9 @@ class _HomePatientState extends State<HomePatient> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 5,),
+            SizedBox(
+              height: 5,
+            ),
             Container()
           ],
         ),

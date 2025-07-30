@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:personal_history/StartScreens/splash.dart'; // استيراد مكتبة الترجمات
+import 'package:personal_history/screens/adwity/addAdwity.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         return const Locale(
             'ar', 'SA'); // العودة إلى اللغة العربية إذا كانت غير مدعومة
       },
-      home: const SplashScreen(),
+      home: Addadwity(),
       debugShowCheckedModeBanner: false,
     );
   }

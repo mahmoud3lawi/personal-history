@@ -3,9 +3,11 @@ import 'package:personal_history/const.dart';
 
 // ignore: must_be_immutable
 class CustomButton extends StatelessWidget {
-  CustomButton({super.key, required this.text, this.ontap});
+  CustomButton({super.key, required this.text, this.ontap, required this.width});
   String text;
   VoidCallback? ontap;
+  double width; // Changed from int to double
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,12 +15,12 @@ class CustomButton extends StatelessWidget {
         color: kPrimaryColor,
         borderRadius: BorderRadius.circular(20),
       ),
-      width: double.infinity,
+      width: width, // Now accepts a double value
       height: 52,
       child: MaterialButton(
         onPressed: ontap,
         child: Text(
-          (text),
+          text,
           style: const TextStyle(
               fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
         ),

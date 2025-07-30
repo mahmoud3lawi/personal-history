@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_history/const.dart';
-import 'package:personal_history/resetPasswordScreens/otp_phone.dart';
+import 'package:personal_history/screens/resetPasswordScreens/otp_phone.dart';
 import 'package:personal_history/widgets/CustomButton.dart';
 
 class PhoneVerify extends StatefulWidget {
@@ -92,6 +92,7 @@ class _PhoneVerifyState extends State<PhoneVerify> {
                 ),
                 const SizedBox(height: 80),
                 CustomButton(
+                   width: double.infinity,
                   text: "ارسال",
                   ontap: () {
                     if (formKey.currentState!.validate()) {
