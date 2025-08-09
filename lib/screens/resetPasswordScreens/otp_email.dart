@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // لاستيراد input formatters
 import 'package:personal_history/const.dart';
@@ -43,13 +45,13 @@ class _OtpEmailState extends State<OtpEmail> {
         inputFormatters: [
           FilteringTextInputFormatter.digitsOnly, // أرقام فقط
         ],
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
           color: Colors.black, // لون النص
         ),
         maxLength: 1, // عدد الحروف المسموح به
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           counterText: "",
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: kPrimaryColor),
@@ -79,12 +81,12 @@ class _OtpEmailState extends State<OtpEmail> {
       // Navigate to the Reset Password screen
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => ResetPass()),
+        MaterialPageRoute(builder: (context) => const ResetPass()),
       );
     } else {
       // Show an error message
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('يرجى إدخال رمز التحقق المكون من 4 أرقام')),
+        const SnackBar(content: Text('يرجى إدخال رمز التحقق المكون من 4 أرقام')),
       );
     }
   }
@@ -92,7 +94,7 @@ class _OtpEmailState extends State<OtpEmail> {
   void _resendOTP() {
     // Handle resend OTP logic here, like calling an API or sending a request.
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('تم إرسال رمز التحقق مرة أخرى')),
+      const SnackBar(content: Text('تم إرسال رمز التحقق مرة أخرى')),
     );
   }
 
@@ -101,7 +103,7 @@ class _OtpEmailState extends State<OtpEmail> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
         backgroundColor: Colors.transparent,
@@ -109,39 +111,39 @@ class _OtpEmailState extends State<OtpEmail> {
       ),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 80),
-              Text(
+              const SizedBox(height: 80),
+              const Text(
                 'رمز التحقق',
                 style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                     color: Colors.black),
               ),
-              SizedBox(height: 8),
-              Text(
+              const SizedBox(height: 8),
+              const Text(
                 'يرجى إدخال الرمز الذي أرسلناه للتو إلى example@gmail.com',
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(4, (index) => _buildOTPBox(index)),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "لم تستلم رمز التحقق؟",
                     style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   InkWell(
                     onTap: _resendOTP,
                     child: const Text(
@@ -156,7 +158,7 @@ class _OtpEmailState extends State<OtpEmail> {
                   )
                 ],
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               CustomButton(
                  width: double.infinity,
                 text: "تأكيد",

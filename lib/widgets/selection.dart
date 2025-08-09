@@ -32,6 +32,7 @@ class SelectionOption extends StatelessWidget {
           boxShadow: isSelected
               ? [
                   BoxShadow(
+                    // ignore: deprecated_member_use
                     color: kPrimaryColor.withOpacity(0.3),
                     spreadRadius: 2,
                     blurRadius: 5,

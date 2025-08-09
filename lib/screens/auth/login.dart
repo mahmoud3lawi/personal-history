@@ -4,7 +4,7 @@ import 'package:personal_history/screens/resetPasswordScreens/Forgetpassword.dar
 import 'package:personal_history/widgets/CustomButton.dart';
 import 'package:personal_history/widgets/customPasswordField.dart';
 import 'package:personal_history/widgets/customTextField.dart';
-import '../../../patientScreens/homePatient.dart';
+import '../patientScreens/homePatient.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -43,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 const SizedBox(height: 25),
-                Image.asset("images/logo.png",
+                Image.asset("assets/images/logo.png",
                     width: 50, height: 50, color: kPrimaryColor),
                 const Text("صحتك",
                     style: TextStyle(
@@ -66,6 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
                     if (value == null || value.isEmpty)
+                      // ignore: curly_braces_in_flow_control_structures
                       return "البريد الإلكتروني لا يمكن أن يكون فارغًا";
                     if (!RegExp(
                             r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
@@ -116,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HomePatient()));
+                              builder: (context) => const HomePatient()));
                     }
                   },
                 ),
@@ -126,13 +127,13 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     Image(
                       image: AssetImage(
-                        "images/Ellipse 2.png",
+                        "assets/images/Ellipse 2.png",
                       ),
                       height: 50,
                     ),
                     SizedBox(width: 20),
                     Image(
-                      image: AssetImage("images/Ellipse 3.png"),
+                      image: AssetImage("assets/images/Ellipse 3.png"),
                       height: 50,
                     ),
                   ],

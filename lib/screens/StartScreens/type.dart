@@ -12,7 +12,7 @@ class UserType extends StatefulWidget {
 }
 
 class _UserTypeState extends State<UserType> {
-  String selectedType = ''; // القيمة الافتراضية
+  String selectedType = ''; 
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class _UserTypeState extends State<UserType> {
                             const SizedBox(
                               width: 30,
                             ),
-                            Image.asset("images/doc.png"),
+                            Image.asset("assets/images/doc.png"),
                           ],
                         ),
                       ),
@@ -108,7 +108,7 @@ class _UserTypeState extends State<UserType> {
                             const SizedBox(
                               width: 30,
                             ),
-                            Image.asset("images/pat.png"),
+                            Image.asset("assets/images/pat.png"),
                           ],
                         ),
                       ),
@@ -146,7 +146,7 @@ class _UserTypeState extends State<UserType> {
                             const SizedBox(
                               width: 30,
                             ),
-                            Image.asset("images/scien.png"),
+                            Image.asset("assets/images/scien.png"),
                           ],
                         ),
                       ),
@@ -186,7 +186,7 @@ class _UserTypeState extends State<UserType> {
                             const SizedBox(
                               width: 30,
                             ),
-                            Image.asset("images/scan.png"),
+                            Image.asset("assets/images/scan.png"),
                           ],
                         ),
                       ),
@@ -226,7 +226,7 @@ class _UserTypeState extends State<UserType> {
                             const SizedBox(
                               width: 30,
                             ),
-                            Image.asset("images/phar.png"),
+                            Image.asset("assets/images/phar.png"),
                           ],
                         ),
                       ),
@@ -245,7 +245,7 @@ class _UserTypeState extends State<UserType> {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: CustomButton(
-                 width: double.infinity,
+                width: double.infinity,
                 text: "التالي",
                 ontap: () {
                   if (selectedType.isEmpty) {

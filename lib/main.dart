@@ -1,6 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:personal_history/screens/adwity/addAdwity.dart';
+import 'package:personal_history/screens/pharmacyScreens/medicine.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,8 +24,7 @@ class MyApp extends StatelessWidget {
         Locale('en', 'US'), // الإنجليزية
         Locale('ar', 'SA'), // العربية
       ],
-      // إضافة الـ localizationsDelegates لدعم الترجمة للغة العربية
-      localizationsDelegates: [
+      localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         return const Locale(
             'ar', 'SA'); // العودة إلى اللغة العربية إذا كانت غير مدعومة
       },
-      home: Addadwity(),
+      home: Medicine(),
       debugShowCheckedModeBanner: false,
     );
   }

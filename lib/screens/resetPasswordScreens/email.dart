@@ -65,8 +65,9 @@ class _EmailVerifyState extends State<EmailVerify> {
                   icon: Icons.email_rounded,
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
-                    if (value == null || value.isEmpty)
+                    if (value == null || value.isEmpty) {
                       return "البريد الإلكتروني لا يمكن أن يكون فارغًا";
+                    }
                     if (!RegExp(
                             r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
                         .hasMatch(value)) {

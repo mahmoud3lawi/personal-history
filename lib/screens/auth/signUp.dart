@@ -4,7 +4,7 @@ import 'package:personal_history/const.dart';
 import 'package:personal_history/widgets/CustomButton.dart';
 import 'package:personal_history/widgets/customPasswordField.dart';
 import 'package:personal_history/widgets/customTextField.dart';
-import '../../../patientScreens/homePatient.dart';
+import '../patientScreens/homePatient.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -54,7 +54,7 @@ class _SignupState extends State<Signup> {
             child: Column(
               children: [
                 const SizedBox(height: 25),
-                Image.asset("images/logo.png",
+                Image.asset("assets/images/logo.png",
                     width: 50, height: 50, color: kPrimaryColor),
                 const Text("صحتك",
                     style: TextStyle(
@@ -85,8 +85,9 @@ class _SignupState extends State<Signup> {
                   icon: Icons.email_rounded,
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
-                    if (value == null || value.isEmpty)
+                    if (value == null || value.isEmpty) {
                       return "البريد الإلكتروني لا يمكن أن يكون فارغًا";
+                    }
                     if (!RegExp(
                             r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
                         .hasMatch(value)) {
@@ -122,7 +123,7 @@ class _SignupState extends State<Signup> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HomePatient()));
+                              builder: (context) => const HomePatient()));
                     }
                   },
                 ),
@@ -132,13 +133,13 @@ class _SignupState extends State<Signup> {
                   children: [
                     Image(
                       image: AssetImage(
-                        "images/Ellipse 2.png",
+                        "assets/images/Ellipse 2.png",
                       ),
                       height: 50,
                     ),
                     SizedBox(width: 20),
                     Image(
-                      image: AssetImage("images/Ellipse 3.png"),
+                      image: AssetImage("assets/images/Ellipse 3.png"),
                       height: 50,
                     ),
                   ],
@@ -155,7 +156,7 @@ class _SignupState extends State<Signup> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginPage()));
+                                builder: (context) => const LoginPage()));
                       },
                       child: const Text(
                         "تسجيل الدخول",

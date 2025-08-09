@@ -14,31 +14,31 @@ class _CongratsState extends State<Congrats> {
     return Scaffold(
       backgroundColor: bgcolor,
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Center(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 190,
               ),
               Container(
                   height: 161,
                   width: 161,
-                  child: Image.asset(
-                    "images/cir.png",
-                  ),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
+                  ),
+                  child: Image.asset(
+                    "assets/images/cir.png",
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text('تهانينا',
+              const Text('تهانينا',
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                   )),
-              Text(
+              const Text(
                 'لقد قمت بتغيير كلمة المرور بنجاح ',
                 style: TextStyle(fontSize: 20, color: Colors.grey),
               ),

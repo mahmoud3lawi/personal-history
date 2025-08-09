@@ -66,7 +66,7 @@ class _SplashScreenState extends State<SplashScreen>
                   Transform.translate(
                     offset: Offset(0, _logoPositionAnimation.value),
                     child: Image.asset(
-                      'images/logo.png',
+                      'assets/images/logo.png',
                       width: 80,
                       height: 80,
                     ),
@@ -74,7 +74,7 @@ class _SplashScreenState extends State<SplashScreen>
                   const SizedBox(height: 10), // مسافة بين اللوجو والاسم
                   Opacity(
                     opacity: _nameOpacityAnimation.value,
-                    child: Text(
+                    child: const Text(
                       "صحتك",
                       style: TextStyle(
                         fontSize: 32,

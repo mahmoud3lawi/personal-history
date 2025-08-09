@@ -30,7 +30,7 @@ class CustomTextField extends StatelessWidget {
         focusedBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: kPrimaryColor),
         ),
-        floatingLabelStyle: const TextStyle(color: kPrimaryColor),
+        floatingLabelStyle: const TextStyle(color: txtcolor),
         labelText: label,
         labelStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
         prefixIcon: Icon(
@@ -47,9 +47,9 @@ class FormFieldWidget extends StatelessWidget {
   final String hintText;
 
   const FormFieldWidget({
-    Key? key,
+    super.key,
     required this.hintText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -60,16 +60,16 @@ class FormFieldWidget extends StatelessWidget {
         const SizedBox(height: 10),
         TextFormField(
           decoration: InputDecoration(
-            floatingLabelStyle: TextStyle(color: kPrimaryColor),
+            floatingLabelStyle: const TextStyle(color: txtcolor),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: Colors.grey),
+              borderSide: const BorderSide(color: Colors.grey),
             ),
             hintText: hintText,
-            hintStyle: TextStyle(color: Colors.grey),
+            hintStyle: const TextStyle(color: Colors.grey),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: kPrimaryColor),
+              borderSide: const BorderSide(color: kPrimaryColor),
             ),
           ),
         ),
