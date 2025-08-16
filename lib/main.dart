@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:personal_history/screens/pharmacyScreens/medicine.dart';
+import 'package:personal_history/screens/StartScreens/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         return const Locale(
             'ar', 'SA'); // العودة إلى اللغة العربية إذا كانت غير مدعومة
       },
-      home: Medicine(),
+      home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
